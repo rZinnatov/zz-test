@@ -16,7 +16,7 @@ double __zztest_round(double d)
 
 
 // <-- Public functions -->
-int zztest_areEquals(
+int zztest_areEquals_double(
     const double d1,
     const double d2,
     const int decimalPointsPrecision
@@ -37,5 +37,18 @@ int zztest_areEquals(
 
     const double precision = 1 / pointShift;
     return fabs(d1Rounded - d2Rounded) <= precision;
+}
+int zztest_areEquals_intArray(
+    int *array1,
+    int *array2,
+    const unsigned int length
+) {
+    for (unsigned int i = 0; i < length; i++) {
+        if (array1[i] != array2[i]) {
+            return 0;
+        }
+    }
+
+    return 1;
 }
 // </- Public functions -->

@@ -4,13 +4,17 @@
 
 int main()
 {
-    TITLE("Test ZZ-Test:");
+    TITLE("Test zz-test:");
 
 
-    TITLE("Test zztest_areEquals:");
-    TEST("\tMain success", test_areEquals_mainSuccess);
-    TEST("\tInfinity", test_areEquals_infinity);
-    TEST("\tNAN", test_areEquals_nan);
+    TITLE("Test zztest_areEquals_double:");
+    TEST("\tMain success", test_areEquals_double_mainSuccess);
+    TEST("\tInfinity", test_areEquals_double_infinity);
+    TEST("\tNAN", test_areEquals_double_nan);
+
+    TITLE("Test zztest_areEquals_intArray:");
+    TEST("\tEqual", test_areEquals_intArray_equal);
+    TEST("\tUnequal", test_areEquals_intArray_unequal);
 
 
     TITLE("Done");

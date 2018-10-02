@@ -20,10 +20,15 @@ extern "C" {
 #endif
 
 
-int zztest_areEquals(
+int zztest_areEquals_double(
     const double d1,
     const double d2,
     const int decimalPointsPrecision
+);
+int zztest_areEquals_intArray(
+    int *array1,
+    int *array2,
+    const unsigned int length
 );
 
 
