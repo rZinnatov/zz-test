@@ -17,34 +17,34 @@ double __zztest_round(double d)
 
 // <-- Public functions -->
 int zztest_areEquals_double(
-    const double d1,
-    const double d2,
+    const double expected,
+    const double actual,
     const int decimalPointsPrecision
 ) {
-    if (isnan(d1) || isnan(d2)) {
+    if (isnan(expected) || isnan(actual)) {
         return 0;
     }
-    if (d1 == INFINITY) {
-        return d2 == INFINITY;
+    if (expected == INFINITY) {
+        return actual == INFINITY;
     }
-    if (d1 == -INFINITY) {
-        return d2 == -INFINITY;
+    if (expected == -INFINITY) {
+        return actual == -INFINITY;
     }
 
     const double pointShift = pow(10, decimalPointsPrecision);
-    const double d1Rounded = __zztest_round(d1 * pointShift) / pointShift;
-    const double d2Rounded = __zztest_round(d2 * pointShift) / pointShift;
+    const double expectedRounded = __zztest_round(expected * pointShift) / pointShift;
+    const double actualRounded = __zztest_round(actual * pointShift) / pointShift;
 
     const double precision = 1 / pointShift;
-    return fabs(d1Rounded - d2Rounded) <= precision;
+    return fabs(expectedRounded - actualRounded) <= precision;
 }
 int zztest_areEquals_intArray(
-    int *array1,
-    int *array2,
+    int *expected,
+    int *actual,
     const unsigned int length
 ) {
     for (unsigned int i = 0; i < length; i++) {
-        if (array1[i] != array2[i]) {
+        if (expected[i] != actual[i]) {
             return 0;
         }
     }

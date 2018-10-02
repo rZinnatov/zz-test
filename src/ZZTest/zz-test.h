@@ -21,13 +21,13 @@ extern "C" {
 
 
 int zztest_areEquals_double(
-    const double d1,
-    const double d2,
+    const double expected,
+    const double actual,
     const int decimalPointsPrecision
 );
 int zztest_areEquals_intArray(
-    int *array1,
-    int *array2,
+    int *expected,
+    int *actual,
     const unsigned int length
 );
 
